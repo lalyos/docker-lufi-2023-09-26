@@ -5,8 +5,9 @@ cat > /var/www/html/index.html <<EOF
 <head>
     <title>Document</title>
 </head>
-<body>
+<body bgcolor="${COLOR:=gray}">
     <h1>${TITLE:=Welcome}</h1>
+    ${BODY:=Please use COLOR/TITLE/BODY env vars}
 </body>
 </html>
 EOF
