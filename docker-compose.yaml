@@ -1,5 +1,8 @@
 services:
   backend:
     image: web:v7
+    environment:
+      - TITLE=Dinner [dev]
+      - COLOR=yellow
     ports:
       - 80
