@@ -1,0 +1,5 @@
+services:
+  backend:
+    image: web:v7
+    ports:
+      - 80
