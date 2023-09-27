@@ -5,6 +5,12 @@ services:
       - 80:80
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock
+  lunch:
+    image: web:v7
+    environment:
+      - TITLE=lunch for lalyos
+      - COLOR=hotpink
+      - VIRTUAL_HOST=lunch.lvh.me
   backend:
     image: web:v7
     build:
@@ -15,6 +21,7 @@ services:
     environment:
       - TITLE=Dinner [dev]
       - COLOR=yellow
+      - VIRTUAL_HOST=backend.lvh.me
     ports:
       - 80
   frontend:
@@ -23,5 +30,6 @@ services:
       - TITLE=FRONT [dev]
       - COLOR=yellow
       - BODY=<iframe src="https://giphy.com/embed/5t235Nf4wo3rhLSMVy" width="480" height="333" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/garfield-cat-food-5t235Nf4wo3rhLSMVy">via GIPHY</a></p>
+      - VIRTUAL_HOST=backend.lvh.me
     ports:
       - 80
