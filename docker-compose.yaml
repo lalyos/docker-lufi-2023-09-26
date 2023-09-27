@@ -1,6 +1,11 @@
 services:
   backend:
     image: web:v7
+    build:
+      context: .
+      tags:
+      - lalyos/web
+      - ttl.sh/web
     environment:
       - TITLE=Dinner [dev]
       - COLOR=yellow
