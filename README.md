@@ -87,3 +87,9 @@ docker run --name tool --rm --net=container:frontend  -it tool
 ```
 docker compose up -d
 ```
+
+## References:
+
+- Traefik + acme https://github.com/lalyos/docker-traefik/
+- https://12factor.net/
+- 
