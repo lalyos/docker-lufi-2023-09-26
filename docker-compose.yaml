@@ -1,4 +1,10 @@
 services:
+  proxy:
+    image: nginxproxy/nginx-proxy
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
   backend:
     image: web:v7
     build:
