@@ -27,17 +27,16 @@ services:
       - lalyos/web
       - ttl.sh/web
     environment:
-      - TITLE=Dinner [dev]
-      - COLOR=yellow
-      - VIRTUAL_HOST=backend.lvh.me
+      - TITLE=${BACKEND_TITLE:-Backend [DEV]}
+      - COLOR=${BACKEND_COLOR:-gray}
+      - BODY=${BACKEND_BODY:-hint .env}
     ports:
       - 80
   frontend:
     image: web:v7
     environment:
-      - TITLE=FRONT [dev]
-      - COLOR=yellow
-      - BODY=<iframe src="https://giphy.com/embed/5t235Nf4wo3rhLSMVy" width="480" height="333" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/garfield-cat-food-5t235Nf4wo3rhLSMVy">via GIPHY</a></p>
-      - VIRTUAL_HOST=backend.lvh.me
+      - TITLE=${FRONTEND_TITLE:-FRONTEND [DEV]}
+      - COLOR=${FRONTEND_COLOR:-gray}
+      - BODY=${FRONTEND_BODY:-hint .env}
     ports:
       - 80
