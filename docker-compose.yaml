@@ -13,10 +13,12 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   lunch:
     image: web:v7
+    ports:
+    - 80
     environment:
-      - TITLE=lunch for lalyos
-      - COLOR=hotpink
-      - VIRTUAL_HOST=lunch.lvh.me
+      - TITLE=${TITLE:-Lazy DEV}
+      - COLOR=${COLOR:-gray}
+      - BODY=${BODY:- Please set TITLE/COLOR/BODY in .env file ;)}
   backend:
     image: web:v7
     build:
