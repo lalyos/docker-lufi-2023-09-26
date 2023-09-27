@@ -8,8 +8,10 @@ cat > /var/www/html/index.html <<EOF
 <body bgcolor="${COLOR:=gray}">
     <h1>${TITLE:=Welcome}</h1>
     ${BODY:=Please use COLOR/TITLE/BODY env vars}
+    <hr>
+    Copyralyt 2023.
 </body>
 </html>
 EOF
 
-nginx -g "daemon off;"
+exec nginx -g "daemon off;"
