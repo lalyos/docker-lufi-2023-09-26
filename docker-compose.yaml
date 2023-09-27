@@ -2,10 +2,10 @@ services:
   traefik:
     image: traefik:1.7-alpine
     command:
-      - --docker.domain=lvh.me
+      - --docker.domain=${DOMAIN:-lvh.me}
       - --api.dashboard
     labels:
-      - "traefik.frontend.rule=Host:traefik.lvh.me"
+      - "traefik.frontend.rule=Host:traefik.${DOMAIN:-lvh.me}"
       - "traefik.port=8080"
     ports:
       - 80:80
